@@ -53,14 +53,7 @@ box-sizing: border-box;
 }
 
 
-input {
- 
-  transition: all 2s;       
-}
-input:focus {
-  width: 200px;
-  font-size: 24px;
-}
+
 
 
 
@@ -98,7 +91,8 @@ justify-content:center;
 
 .Parrafo{
   font-family: 'Poppins', sans-serif;
-  font-size: 200%;
+  font-size: 250%;
+  text-align: center;
 }
 
 .container{
@@ -153,12 +147,11 @@ justify-content:center;
 
 .footer{
   background-color: black;
-  display: flex;
+  
 
   font-family: 'Poppins', sans-serif;
   color: white;
-  width:100%;
-  
+  width: auto;
 }
 
 .img{
