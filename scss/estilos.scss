@@ -1,0 +1,226 @@
+
+@import "reset.scss";
+@import "tipografia.scss";
+@import "variables.scss";
+
+
+.body{
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+}
+
+.header {
+    
+         .bgpropio{
+             font-family: $tipografia;
+             background-color:$color-principal;
+                .nav-link {
+                    color: $color-tipografia1;
+                    padding: 5%;
+                   font-size: 20px;
+                   margin-inline: 15px;
+               
+                   .navbar-toggler {
+                     color: $color-tipografia1;
+                     border-color: $color-tipografia1;
+                
+                    }
+               
+               
+               
+               
+                }
+               
+                   
+           
+           
+           
+            }
+               
+  
+  
+}
+   
+
+
+
+
+.primerParrafo{
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 50px;
+    font-family: $tipografia;
+    text-align: center;
+    color: $color-principal;
+    
+}
+
+.d-blockw-100{
+  object-fit: cover 
+}
+.carousel-item{
+  height: auto;
+}
+.container{
+  display:grid;
+  grid-template-columns: repeat(4 , 1fr);
+  width: 100%;
+  grid-auto-rows: 150px;
+  padding: 20px;
+  column-gap: 5rem;
+  row-gap: 5rem;
+  gap :10px;
+  background-color: $color-principal;
+
+}
+
+.containergaleria {
+    
+        .galeria_item .hvr-grow {
+            display: inline-block;
+           vertical-align: middle;
+         transform: translateZ(0);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          backface-visibility: hidden;
+         -moz-osx-font-smoothing: grayscale;
+          transition-duration: 0.3s;
+           transition-property: transform;
+            position:relative;
+                .galeria_img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center; 
+                    
+                    .galeria_titulo{
+                        position:absolute;
+                      bottom :0;
+                     font-size: 80%;
+                      color:$color-tipografia1;
+                     background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
+                     width: 100%;
+                     margin:0;
+                      padding: 10px;
+                    }
+                
+                
+                
+                
+                }
+                
+         
+         
+        }      
+
+
+}
+            
+
+
+
+
+
+
+
+
+
+.main {  
+  background-color: white;
+  width: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer{
+  background-color: $color-principal;
+  font-family: $tipografia;
+  color:$color-tipografia1;
+  width: auto;
+}
+
+.img .imagen img{
+  width: 100%;
+}
+
+
+
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
+
+.card{
+  width: 65%;
+ 
+}
+.col{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card-img-top{
+  object-fit: cover;
+  width: 60%;
+ 
+  
+
+}
+
+@media (max-width:520px){
+  .container{
+   grid-template-columns: repeat(2 , 1fr);  
+   width: 100%;
+   padding: 10%;
+   
+   
+  }
+  .header{
+  font-size: 12px;
+  
+  }
+  .primerParrafo{
+  font-size: 150%;
+  }
+  .galeria_item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   margin-top: 5%;
+
+  }
+  .galeria_titulo{
+  font-size: 100%;
+  }
+
+}
+
+@media (min-width:728px){
+
+  .container{
+    grid-template-columns: repeat(3 , 1fr); 
+     
+  }
+
+}
+
+@media (min-width:1024px){
+
+  .container{
+    grid-template-columns: repeat(4 , 1fr);  
+    width:90%;
+    margin: auto;
+  }
+
+} 
+
+  
