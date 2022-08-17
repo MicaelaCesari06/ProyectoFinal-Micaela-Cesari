@@ -43,16 +43,22 @@
 }
    
 
+$estilos: (
+    color:black,
+    centro:center,
+    fuente:'Poppins', sans-serif,
+    tFuente:50px,
+    estilofuente:italic
+
+);
 
 
-
-.primerParrafo{
-    font-style: italic;
-    font-weight: lighter;
-    font-size: 50px;
-    font-family: $tipografia;
-    text-align: center;
-    color: $color-principal;
+primerParrafo{
+    font-style: map-get($estilos,estilofuente);
+    font-size: map-get($estilos, tFuente);  
+    font-family: map-get($estilos,fuente);
+    text-align: map-get($estilos, centro);
+    color: map-get($estilos, color);
     
 }
 
