@@ -5,8 +5,7 @@
 
 
 .body{
- display: flex;
- flex-direction: column;
+ @include flex-column;
  min-height: 100vh;
 }
 
@@ -93,7 +92,7 @@ primerParrafo{
           transition-duration: 0.3s;
            transition-property: transform;
             position:relative;
-                .galeria_img {
+                .galeria_img .img .imagen img{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -129,15 +128,19 @@ primerParrafo{
 
 
 
+@mixin flex-column{
+	display:flex;
+    flex-direction: column;
+	
 
 
+}
 
 
 .main {  
+    @include flex-column;
   background-color: white;
   width: auto;
-  display:flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -150,9 +153,7 @@ primerParrafo{
   width: auto;
 }
 
-.img .imagen img{
-  width: 100%;
-}
+
 
 
 
@@ -164,7 +165,7 @@ primerParrafo{
 }
 
 .card{
-  width: 65%;
+  width: 60%;
  
 }
 .col{
@@ -175,8 +176,9 @@ primerParrafo{
 }
 
 .card-img-top{
+    @extend.card;
   object-fit: cover;
-  width: 60%;
+
  
   
 
