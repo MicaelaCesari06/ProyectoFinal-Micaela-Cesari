@@ -21,21 +21,26 @@
       color: white;
       border-color: white; }
 
-.primerParrafo {
-  font-style: italic;
-  font-weight: lighter;
-  font-size: 50px;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  color: black; }
-
-.d-blockw-100 {
-  object-fit: cover; }
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: auto;
+  justify-content: center;
+  align-items: center; }
+  .main .primerParrafo {
+    font-style: italic;
+    font-size: 50px;
+    font-family: "Poppins" sans-serif;
+    text-align: center;
+    color: black; }
 
 .carousel-item {
   height: auto; }
+  .carousel-item .d-blockw-100 {
+    object-fit: cover; }
 
-.container {
+.cont {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
@@ -44,7 +49,12 @@
   column-gap: 5rem;
   row-gap: 5rem;
   gap: 10px;
-  background-color: black; }
+  background-color: white; }
+
+.estilomarcas {
+  color: black;
+  font-size: 80px;
+  font-family: "Poppins", sans-serif; }
 
 .containergaleria .galeria_item .hvr-grow {
   display: inline-block;
@@ -56,80 +66,70 @@
   transition-duration: 0.3s;
   transition-property: transform;
   position: relative; }
-  .containergaleria .galeria_item .hvr-grow .galeria_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .containergaleria .galeria_item .hvr-grow .galeria_img .galeria_titulo {
-      position: absolute;
-      bottom: 0;
-      font-size: 80%;
-      color: white;
-      background: linear-gradient(rgba(255, 255, 255, 0), black);
+  .containergaleria .galeria_item .hvr-grow .hvr-grow:hover,
+  .containergaleria .galeria_item .hvr-grow .hvr-grow:focus,
+  .containergaleria .galeria_item .hvr-grow .hvr-grow:active {
+    transform: scale(1.1); }
+    .containergaleria .galeria_item .hvr-grow .hvr-grow:hover .galeria_img .img .imagen img,
+    .containergaleria .galeria_item .hvr-grow .hvr-grow:focus .galeria_img .img .imagen img,
+    .containergaleria .galeria_item .hvr-grow .hvr-grow:active .galeria_img .img .imagen img {
       width: 100%;
-      margin: 0;
-      padding: 10px; }
-
-.main {
-  background-color: white;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .containergaleria .galeria_item .hvr-grow .hvr-grow:hover .galeria_img .img .imagen img .galeria_titulo,
+      .containergaleria .galeria_item .hvr-grow .hvr-grow:focus .galeria_img .img .imagen img .galeria_titulo,
+      .containergaleria .galeria_item .hvr-grow .hvr-grow:active .galeria_img .img .imagen img .galeria_titulo {
+        position: absolute;
+        bottom: 0;
+        font-size: 80%;
+        color: white;
+        background: linear-gradient(rgba(255, 255, 255, 0), black);
+        width: 100%;
+        margin: 0;
+        padding: 10px; }
 
 .footer {
   background-color: black;
   font-family: "Poppins", sans-serif;
   color: white;
-  width: auto; }
+  width: 100%;
+  height: 60%; }
 
-.img .imagen img {
-  width: 100%; }
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  transform: scale(1.1); }
-
-.card {
-  width: 65%; }
-
-.col {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.card-img-top {
-  object-fit: cover;
+.card, .card .col .card-img-top {
   width: 60%; }
+  .card .col, .card .col .card-img-top .col {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .card .col .card-img-top {
+      object-fit: cover; }
 
 @media (max-width: 520px) {
-  .container {
+  .cont {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     padding: 10%; }
   .header {
     font-size: 12px; }
   .primerParrafo {
-    font-size: 150%; }
+    font-size: 100%; }
   .galeria_item {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5%; }
-  .galeria_titulo {
-    font-size: 100%; } }
+    .galeria_item .galeria_titulo {
+      font-size: 100%; } }
 
 @media (min-width: 728px) {
-  .container {
+  .cont {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media (min-width: 1024px) {
-  .container {
+  .cont {
     grid-template-columns: repeat(4, 1fr);
     width: 90%;
     margin: auto; } }

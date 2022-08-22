@@ -4,8 +4,15 @@
 @import "variables.scss";
 
 
+
+@mixin flex-column{
+	display:flex;
+    flex-direction: column;
+
+
+}
 .body{
- @include flex-column;
+  @include flex-column;
  min-height: 100vh;
 }
 
@@ -40,34 +47,51 @@
   
   
 }
-   
-
 $estilos: (
     color:black,
     centro:center,
-    fuente:'Poppins', sans-serif,
+    fuente:'Poppins' sans-serif,
     tFuente:50px,
     estilofuente:italic
 
 );
+.main {  
+    @include flex-column;
+  background-color: white;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+
+            .primerParrafo{
+                font-style: map-get($estilos,estilofuente);
+                font-size: map-get($estilos, tFuente);  
+                font-family: map-get($estilos, fuente);
+                text-align: map-get($estilos, centro);
+                color: map-get($estilos, color)
+                
+            }
 
 
-primerParrafo{
-    font-style: map-get($estilos,estilofuente);
-    font-size: map-get($estilos, tFuente);  
-    font-family: map-get($estilos,fuente);
-    text-align: map-get($estilos, centro);
-    color: map-get($estilos, color);
-    
+
+
 }
 
-.d-blockw-100{
-  object-fit: cover 
-}
+
+
+
 .carousel-item{
   height: auto;
+   
+   .d-blockw-100{
+     object-fit: cover 
+
+    }
+
+
+
+
 }
-.container{
+.cont{
   display:grid;
   grid-template-columns: repeat(4 , 1fr);
   width: 100%;
@@ -76,8 +100,14 @@ primerParrafo{
   column-gap: 5rem;
   row-gap: 5rem;
   gap :10px;
-  background-color: $color-principal;
+  background-color: white;
+  
+}
 
+.estilomarcas{
+    color: black;
+    font-size: 80px;
+    font-family: $tipografia;
 }
 
 .containergaleria {
@@ -92,6 +122,13 @@ primerParrafo{
           transition-duration: 0.3s;
            transition-property: transform;
             position:relative;
+
+            .hvr-grow:hover,
+            .hvr-grow:focus,
+            .hvr-grow:active {
+                transform: scale(1.1);
+
+
                 .galeria_img .img .imagen img{
                     width: 100%;
                     height: 100%;
@@ -115,106 +152,94 @@ primerParrafo{
                 
                 
                 }
-                
+            
+            }   
          
          
         }      
 
 
 }
-            
 
 
 
-
-
-@mixin flex-column{
-	display:flex;
-    flex-direction: column;
-	
-
-
-}
-
-
-.main {  
-    @include flex-column;
-  background-color: white;
-  width: auto;
-  justify-content: center;
-  align-items: center;
-
-}
 
 .footer{
   background-color: $color-principal;
   font-family: $tipografia;
   color:$color-tipografia1;
-  width: auto;
+  width: 100% ;
+  height: 60%;
 }
 
 
 
 
-
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  transform: scale(1.1);
-}
 
 .card{
   width: 60%;
  
-}
-.col{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.card-img-top{
-    @extend.card;
-  object-fit: cover;
-
- 
+       .col{
+         display:flex;
+         justify-content: center;
+         align-items: center;
   
+    
+            .card-img-top{
+               @extend.card;
+               object-fit: cover;
+        
+         
+          
+        
+            }
+    
+    
+    
+    
+    
+        }
+
+
+        
+
+
 
 }
+
 
 @media (max-width:520px){
-  .container{
+  .cont{
    grid-template-columns: repeat(2 , 1fr);  
    width: 100%;
    padding: 10%;
    
-   
-  }
+   }
   .header{
   font-size: 12px;
   
   }
   .primerParrafo{
-  font-size: 150%;
-  }
-  .galeria_item{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-   margin-top: 5%;
-
-  }
-  .galeria_titulo{
   font-size: 100%;
   }
+   .galeria_item{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 5%;
+        .galeria_titulo{
+         font-size: 100%;
+        
+        }
+
+    }
+ 
 
 }
 
 @media (min-width:728px){
 
-  .container{
+  .cont{
     grid-template-columns: repeat(3 , 1fr); 
      
   }
@@ -223,7 +248,7 @@ primerParrafo{
 
 @media (min-width:1024px){
 
-  .container{
+  .cont{
     grid-template-columns: repeat(4 , 1fr);  
     width:90%;
     margin: auto;
