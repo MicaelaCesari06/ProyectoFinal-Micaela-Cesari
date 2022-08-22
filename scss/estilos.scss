@@ -127,25 +127,30 @@ $estilos: (
             .hvr-grow:focus,
             .hvr-grow:active {
                 transform: scale(1.1);
-
-
-                .galeria_img .img .imagen img{
+                
+                .img .imagen img{
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center; 
-                    
-                    .galeria_titulo{
-                        position:absolute;
-                      bottom :0;
-                     font-size: 80%;
-                      color:$color-tipografia1;
-                     background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
+                    .galeria_img {
                      width: 100%;
-                     margin:0;
-                      padding: 10px;
+                     height: 100%;
+                     object-fit: cover;
+                     display:flex;
+                     justify-content: center;
+                     align-items: center; 
+                    
+                      .galeria_titulo{
+                         position:absolute;
+                         bottom :0;
+                         font-size: 80%;
+                         color:$color-tipografia1;
+                         background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
+                         width: 100%;
+                          margin:0;
+                         padding: 10px;
+                        }
+                   
+                   
+                   
                     }
                 
                 
@@ -174,16 +179,19 @@ $estilos: (
 
 
 
+.m-0{
+ margin:0%;
 
 
-.card{
-  width: 60%;
+
+    .col{
+      display:flex;
+     justify-content: center;
+     align-items: center;
  
-       .col{
-         display:flex;
-         justify-content: center;
-         align-items: center;
-  
+ 
+        .card{
+          width: 60%;
     
             .card-img-top{
                @extend.card;
@@ -199,7 +207,8 @@ $estilos: (
     
     
         }
-
+  
+    }
 
         
 
