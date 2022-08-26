@@ -55,16 +55,16 @@ primerParrafo {
   transition-duration: 0.3s;
   transition-property: transform;
   position: relative; }
-  .containergaleria .galeria_item .hvr-grow .img .imagen img {
+  .containergaleria .galeria_item .hvr-grow .img {
     width: 100%; }
-    .containergaleria .galeria_item .hvr-grow .img .imagen img .galeria_img {
+    .containergaleria .galeria_item .hvr-grow .img .galeria_img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: flex;
       justify-content: center;
       align-items: center; }
-      .containergaleria .galeria_item .hvr-grow .img .imagen img .galeria_img .galeria_titulo {
+      .containergaleria .galeria_item .hvr-grow .img .galeria_img .galeria_titulo {
         position: absolute;
         bottom: 0;
         font-size: 80%;
