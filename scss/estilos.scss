@@ -47,6 +47,9 @@
   
   
 }
+
+
+
 $estilos: (
     color:black,
     centro:center,
@@ -58,14 +61,14 @@ $estilos: (
 .main {  
     @include flex-column;
   background-color: white;
-  width: auto;
-  justify-content: center;
-  align-items: center;
+  width: 60%;
+  
 
             .primerParrafo{
                 font-style: map-get($estilos,estilofuente);
                 font-size: map-get($estilos, tFuente);  
                 font-family: map-get($estilos, fuente);
+                align-items: center;
                 text-align: map-get($estilos, centro);
                 color: map-get($estilos, color)
                 
@@ -91,18 +94,7 @@ $estilos: (
 
 
 }
-.cont{
-  display:grid;
-  grid-template-columns: repeat(4 , 1fr);
-  width: 100%;
-  grid-auto-rows: 150px;
-  padding: 20px;
-  column-gap: 5rem;
-  row-gap: 5rem;
-  gap :10px;
-  background-color: white;
-  
-}
+
 
 .estilomarcas{
     color: black;
@@ -110,8 +102,17 @@ $estilos: (
     font-family: $tipografia;
 }
 
-.containergaleria {
-    
+.containergaleria{
+    display:grid;
+    align-content: center;
+  grid-template-columns: repeat(4 , 1fr);
+  grid-auto-rows: 150px;
+  padding: 20px;
+  column-gap: 5rem;
+  row-gap: 5rem;
+  gap :10px;
+  background-color: white;
+
         .galeria_item .hvr-grow {
             display: inline-block;
            vertical-align: middle;
@@ -122,21 +123,28 @@ $estilos: (
           transition-duration: 0.3s;
            transition-property: transform;
             position:relative;
+            margin: 50px;
+            padding: 50px;
+            align-content: center;
+            
 
             .hvr-grow:hover,
             .hvr-grow:focus,
             .hvr-grow:active {
                 transform: scale(1.1);
                 
-                .img .imagen img{
-                    width: 100%;
+                .img {
+                 width: 100%;
+                 
                     .galeria_img {
                      width: 100%;
                      height: 100%;
                      object-fit: cover;
                      display:flex;
                      justify-content: center;
-                     align-items: center; 
+                     align-items: center;
+                     
+                     
                     
                       .galeria_titulo{
                          position:absolute;
@@ -169,13 +177,17 @@ $estilos: (
 
 
 
-.footer{
-  background-color: $color-principal;
-  font-family: $tipografia;
-  color:$color-tipografia1;
-  width: 100% ;
-  height: 60%;
+
+.fuente-footer{
+ font-size: 40px;
+ font-family: $tipografia;
+ color: white;
+
+
 }
+
+
+
 
 
 
@@ -216,20 +228,28 @@ $estilos: (
 
 }
 
+.text-center{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+
 
 @media (max-width:520px){
-  .cont{
-   grid-template-columns: repeat(2 , 1fr);  
-   width: 100%;
-   padding: 10%;
+  .containergaleria{
+     grid-template-columns: repeat(2 , 1fr);  
+     width: 100%;
+     padding: 10%;
    
-   }
+    }
   .header{
   font-size: 12px;
   
   }
   .primerParrafo{
-  font-size: 100%;
+  font-size: 80px;
   }
    .galeria_item{
      display:flex;
@@ -248,20 +268,20 @@ $estilos: (
 
 @media (min-width:728px){
 
-  .cont{
-    grid-template-columns: repeat(3 , 1fr); 
+  .containergaleria{
+     grid-template-columns: repeat(3 , 1fr); 
      
-  }
+    }
 
 }
 
 @media (min-width:1024px){
 
-  .cont{
-    grid-template-columns: repeat(4 , 1fr);  
-    width:90%;
-    margin: auto;
-  }
+  .containergaleria{
+     grid-template-columns: repeat(4 , 1fr);  
+     width:90%;
+     margin: auto;
+    }
 
 } 
 
