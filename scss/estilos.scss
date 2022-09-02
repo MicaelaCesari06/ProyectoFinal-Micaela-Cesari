@@ -14,6 +14,7 @@
 .body{
   @include flex-column;
  min-height: 100vh;
+ width: 100%;
 }
 
 .header {
@@ -61,7 +62,7 @@ $estilos: (
 .main {  
     @include flex-column;
   background-color: white;
-  width: 60%;
+  width: 100%;
   
 
             .primerParrafo{
@@ -102,9 +103,12 @@ $estilos: (
     font-family: $tipografia;
 }
 
+
+
 .containergaleria{
     display:grid;
-    align-content: center;
+    width: 100%;
+    place-content: center;
   grid-template-columns: repeat(4 , 1fr);
   grid-auto-rows: 150px;
   padding: 20px;
@@ -149,8 +153,7 @@ $estilos: (
                       .galeria_titulo{
                          position:absolute;
                          bottom :0;
-                         font-size: 80%;
-                         color:$color-tipografia1;
+                         font-size: 80px;
                          background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
                          width: 100%;
                           margin:0;
@@ -185,9 +188,6 @@ $estilos: (
 
 
 }
-
-
-
 
 
 
@@ -239,9 +239,10 @@ $estilos: (
 
 @media (max-width:520px){
   .containergaleria{
-     grid-template-columns: repeat(2 , 1fr);  
-     width: 100%;
+     grid-template-columns: repeat(1 , 1fr);  
+     width: 50%;
      padding: 10%;
+     margin: 0%;
    
     }
   .header{
@@ -256,6 +257,7 @@ $estilos: (
      justify-content: center;
      align-items: center;
      margin-top: 5%;
+     
         .galeria_titulo{
          font-size: 100%;
         
@@ -270,16 +272,22 @@ $estilos: (
 
   .containergaleria{
      grid-template-columns: repeat(3 , 1fr); 
-     
+     width: 80%;
+       
     }
 
+
+
+
+    
+   
 }
 
 @media (min-width:1024px){
 
   .containergaleria{
      grid-template-columns: repeat(4 , 1fr);  
-     width:90%;
+     width:100%;
      margin: auto;
     }
 
