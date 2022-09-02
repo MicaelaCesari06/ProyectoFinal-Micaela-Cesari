@@ -11,9 +11,17 @@
 
 }
 
+
+@mixin flex-column{
+	display:flex;
+    flex-direction: column;
+
+
+}
 .body{
- @include flex-column;
+  @include flex-column;
  min-height: 100vh;
+ width: 100%;
 }
 
 .header {
@@ -47,7 +55,8 @@
   
   
 }
-   
+
+
 
 $estilos: (
     color:black,
@@ -57,38 +66,64 @@ $estilos: (
     estilofuente:italic
 
 );
+.main {  
+    @include flex-column;
+  background-color: white;
+  width: 100%;
+  
+
+            .primerParrafo{
+                font-style: map-get($estilos,estilofuente);
+                font-size: map-get($estilos, tFuente);  
+                font-family: map-get($estilos, fuente);
+                align-items: center;
+                text-align: map-get($estilos, centro);
+                color: map-get($estilos, color)
+                
+            }
 
 
-primerParrafo{
-    font-style: map-get($estilos,estilofuente);
-    font-size: map-get($estilos, tFuente);  
-    font-family: map-get($estilos,fuente);
-    text-align: map-get($estilos, centro);
-    color: map-get($estilos, color);
-    
+
+
 }
 
-.d-blockw-100{
-  object-fit: cover 
-}
+
+
+
 .carousel-item{
   height: auto;
+   
+   .d-blockw-100{
+     object-fit: cover 
+
+    }
+
+
+
+
 }
-.container{
-  display:grid;
+
+
+.estilomarcas{
+    color: black;
+    font-size: 80px;
+    font-family: $tipografia;
+}
+
+
+
+.containergaleria{
+    display:grid;
+    width: 100%;
+    place-content: center;
   grid-template-columns: repeat(4 , 1fr);
-  width: 100%;
   grid-auto-rows: 150px;
   padding: 20px;
   column-gap: 5rem;
   row-gap: 5rem;
   gap :10px;
-  background-color: $color-principal;
+  background-color: white;
 
-}
-
-.containergaleria {
-    
         .galeria_item .hvr-grow {
             display: inline-block;
            vertical-align: middle;
@@ -99,28 +134,41 @@ primerParrafo{
           transition-duration: 0.3s;
            transition-property: transform;
             position:relative;
+            margin: 50px;
+            padding: 50px;
+            align-content: center;
             
-            .img {
-                width: 100%;
-             
-                .galeria_img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center; 
+
+            .hvr-grow:hover,
+            .hvr-grow:focus,
+            .hvr-grow:active {
+                transform: scale(1.1);
                 
-                
-                    .galeria_titulo{
-                        position:absolute;
-                      bottom :0;
-                     font-size: 80%;
-                      color:$color-tipografia1;
-                     background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
+                .img {
+                 width: 100%;
+                 
+                    .galeria_img {
                      width: 100%;
-                     margin:0;
-                      padding: 10px;
+                     height: 100%;
+                     object-fit: cover;
+                     display:flex;
+                     justify-content: center;
+                     align-items: center;
+                     
+                     
+                    
+                      .galeria_titulo{
+                         position:absolute;
+                         bottom :0;
+                         font-size: 80px;
+                         background: linear-gradient(rgba(255, 255, 255, 0),rgb(0, 0, 0));
+                         width: 100%;
+                          margin:0;
+                         padding: 10px;
+                        }
+                   
+                   
+                   
                     }
                 
                 
@@ -133,139 +181,127 @@ primerParrafo{
                 
                 }
             
-            
-            
-            
-
-
-
-
-
-
-            
-            
-            
-            }
-              
-                
-                   
-                
-                
-                
-                
-                
+            }   
          
          
         }      
 
 
 }
-            
 
 
 
 
 
-@mixin flex-column{
-	display:flex;
-    flex-direction: column;
-	
+.fuente-footer{
+ font-size: 40px;
+ font-family: $tipografia;
+ color: white;
 
 
 }
 
 
-.main {  
-    @include flex-column;
-  background-color: white;
-  width: auto;
-  justify-content: center;
-  align-items: center;
 
-}
-
-.footer{
-  background-color: $color-principal;
-  font-family: $tipografia;
-  color:$color-tipografia1;
-  width: auto;
-}
+.m-0{
+ margin:0%;
 
 
 
-
-
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-  transform: scale(1.1);
-}
-
-.card{
-  width: 60%;
+    .col{
+      display:flex;
+     justify-content: center;
+     align-items: center;
  
-}
-.col{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.card-img-top{
-    @extend.card;
-  object-fit: cover;
-
  
+        .card{
+          width: 60%;
+    
+            .card-img-top{
+               @extend.card;
+               object-fit: cover;
+        
+         
+          
+        
+            }
+    
+    
+    
+    
+    
+        }
   
+    }
+
+        
+
+
 
 }
+
+.text-center{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+ 
+}
+
+
 
 @media (max-width:520px){
-  .container{
-   grid-template-columns: repeat(2 , 1fr);  
-   width: 100%;
-   padding: 10%;
+  .containergaleria{
+     grid-template-columns: repeat(1 , 1fr);  
+     width: 50%;
+     padding: 10%;
+     margin: 0%;
    
-   
-  }
+    }
   .header{
   font-size: 12px;
   
   }
   .primerParrafo{
-  font-size: 150%;
+  font-size: 80px;
   }
-  .galeria_item{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-   margin-top: 5%;
+   .galeria_item{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 5%;
+     
+        .galeria_titulo{
+         font-size: 100%;
+        
+        }
 
-  }
-  .galeria_titulo{
-  font-size: 100%;
-  }
+    }
+ 
 
 }
 
 @media (min-width:728px){
 
-  .container{
-    grid-template-columns: repeat(3 , 1fr); 
-     
-  }
+  .containergaleria{
+     grid-template-columns: repeat(3 , 1fr); 
+     width: 80%;
+       
+    }
 
+
+
+
+    
+   
 }
 
 @media (min-width:1024px){
 
-  .container{
-    grid-template-columns: repeat(4 , 1fr);  
-    width:90%;
-    margin: auto;
-  }
+  .containergaleria{
+     grid-template-columns: repeat(4 , 1fr);  
+     width:100%;
+     margin: auto;
+    }
 
 } 
 
